@@ -42,21 +42,21 @@
         // enforce a minimum length
         function(password) {
           if (password.length < owasp.configs.minLength) {
-            return 'The password must be at least ' + owasp.configs.minLength + ' characters long.';
+            return 'אורך סיסמה מינימלי הוא  ' + owasp.configs.minLength + ' תווים.';
           }
         },
 
         // enforce a maximum length
         function(password) {
           if (password.length > owasp.configs.maxLength) {
-            return 'The password must be fewer than ' + owasp.configs.maxLength + ' characters.';
+            return 'אורך סיסמה מקסימלי הוא  ' + owasp.configs.maxLength + ' תווים.';
           }
         },
 
         // forbid repeating characters
         function(password) {
           if (/(.)\1{2,}/.test(password)) {
-            return 'The password may not contain sequences of three or more repeated characters.';
+            return 'חזרה על שלושה תווים זהים רצופים היא אסורה.';
           }
         },
 
@@ -76,30 +76,30 @@
         // require at least one lowercase letter
         function(password) {
           if (!/[a-z]/.test(password)) {
-            return 'The password must contain at least one lowercase letter.';
+            return 'הסיסמה חייבת להכיל לפחות אות קטנה אחת.';
           }
         },
 
         // require at least one uppercase letter
-        function(password) {
-          if (!/[A-Z]/.test(password)) {
-            return 'The password must contain at least one uppercase letter.';
-          }
-        },
+        // function(password) {
+        //   if (!/[A-Z]/.test(password)) {
+        //     return 'The password must contain at least one uppercase letter.';
+        //   }
+        // },
 
         // require at least one number
         function(password) {
           if (!/[0-9]/.test(password)) {
-            return 'The password must contain at least one number.';
+            return 'הסיסמה חייבת להכיל לפחות ספרה אחת.';
           }
         },
 
         // require at least one special character
-        function(password) {
-          if (!/[^A-Za-z0-9]/.test(password)) {
-            return 'The password must contain at least one special character.';
-          }
-        },
+        // function(password) {
+        //   if (!/[^A-Za-z0-9]/.test(password)) {
+        //     return 'The password must contain at least one special character.';
+        //   }
+        // },
 
       ],
     };
